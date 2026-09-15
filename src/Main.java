@@ -28,20 +28,17 @@ public class Main {
             System.out.println(ppt1);
         }
 
-        if (randomNum0 == 0 && randomNum1 == 1){
-            System.out.println("\nPapel venceu!");
-        } else if (randomNum0 == 0 && randomNum1 == 2) {
-            System.out.println("\nPedra venceu!");
-        } else if (randomNum0 == 1 && randomNum1 == 2) {
-            System.out.println("\nTesoura venceu!");
-        } else if (randomNum0 == 1 && randomNum1 == 0) {
-            System.out.println("\nPapel venceu!");
-        } else if (randomNum0 == 2 && randomNum1 == 0) {
-            System.out.println("\nPedra venceu!");
-        } else if (randomNum0 == 2 && randomNum1 == 1) {
-            System.out.println("\nTesoura venceu!");
-        } else {
+        if (randomNum0 == randomNum1) {
             System.out.println("\nEmpate!");
+        } else if ((randomNum0 == 0 && randomNum1 == 1) || (randomNum0 == 1 && randomNum0 == 0)) {
+            // 0 (Pedra) vs 1 (Papel)
+            System.out.println("\nPapel venceu!");
+        } else if ((randomNum0 == 0 && randomNum1 == 2) || (randomNum0 == 2 && randomNum1 == 0)) {
+            // 0 (Pedra) vs 2 (Tesoura)
+            System.out.println("\nPedra venceu!");
+        } else {
+            // 1 (Papel) vs 2 (Tesoura)
+            System.out.println("\nTesoura venceu!");
         }
     }
 }
